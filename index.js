@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads' })
 
@@ -11,7 +10,6 @@ const port = process.env.PORT || 3000;
 
 // Mount Middlewares
 app.use(cors());
-app.use(bodyparser.urlencoded({ extended: true }));
 app.use('/public', express.static(process.cwd() + '/public'));
 
 // Connect Database
