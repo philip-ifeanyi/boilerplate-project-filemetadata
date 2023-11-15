@@ -40,11 +40,7 @@ app.post('/api/fileanalyse', upload.single('upfile'), async (req, res) => {
 
   const file = await fileObj.save()
 
-  res.json({
-    name: file.name,
-    type: file.type,
-    size: file.size
-  })
+  res.json(file)
 })
 
 // Set App to listen on port
