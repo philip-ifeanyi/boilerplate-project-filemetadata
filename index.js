@@ -32,11 +32,11 @@ app.get('/', function (req, res) {
 
 app.post('/api/fileanalyse', upload.single('upfile'), async (req, res) => {
   const { originalname, mimetype, size } = req.file
-  const fileObj = new File({
+  const fileObj = {
     name: originalname,
     type: mimetype,
     size: size
-  })
+  }
 
   const file = await fileObj.save()
 
